@@ -22,10 +22,18 @@
       <select id="from-city"></select>
       <input id="from-text" type="text" placeholder="Landmark or detail" />
 
-      <h3>To</h3>
-      <select id="to-state"></select>
-      <select id="to-city"></select>
-      <input id="to-text" type="text" placeholder="Landmark or detail" />
+      <label>
+        <input type="checkbox" id="same-location" checked />
+        To same state and city
+      </label>
+
+      <div id="to-section" style="display: none;">
+        <h3>To</h3>
+        <select id="to-state"></select>
+        <select id="to-city"></select>
+      </div>
+
+      <input id="to-text" type="text" placeholder="Destination landmark" />
 
       <textarea id="info-text" placeholder="Additional information..."></textarea>
 
@@ -33,11 +41,11 @@
     </section>
 
     <section id="feed">
-      <!-- Posts will appear here -->
+      <!-- Feed appears here -->
     </section>
   </main>
 
-  <script src="post.js"></script>
   <script src="nigeria-data.js"></script>
+  <script src="post.js"></script>
 </body>
 </html>
