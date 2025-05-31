@@ -1,25 +1,46 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8" />
+  <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Post - route.me</title>
+  <title>Create Post</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
-    <h2>Hi, <span id="username"></span></h2>
+    <h2 id="greeting">Hi, User</h2>
     <p>Where are you headed?</p>
-    <label>From State: <select id="fromState"></select></label>
-    <label>From City: <select id="fromCity"></select></label>
-    <label><input type="checkbox" id="sameLocation" checked /> To same state and city</label>
-    <div id="toLocation" style="display:none;">
-      <label>To State: <select id="toState"></select></label>
-      <label>To City: <select id="toCity"></select></label>
-    </div>
-    <input type="text" id="landmark" placeholder="Landmark / Description" required />
-    <textarea id="extra" placeholder="Additional Information"></textarea>
-    <button id="submitPost">Post</button>
+
+    <form id="postForm">
+      <h3>From</h3>
+      <label>State:
+        <select id="fromState" required></select>
+      </label><br>
+      <label>City:
+        <select id="fromCity" required></select>
+      </label><br>
+      <label>Landmark:
+        <input type="text" id="landmark" placeholder="E.g. Ojota Bus Stop" required />
+      </label><br><br>
+
+      <h3>To</h3>
+      <label style="display: flex; align-items: center; gap: 8px;">
+        <input type="checkbox" id="sameCity" checked />
+        Same as 'From'
+      </label><br>
+      <label>State:
+        <select id="toState" disabled required></select>
+      </label><br>
+      <label>City:
+        <select id="toCity" disabled required></select>
+      </label><br><br>
+
+      <label>Additional Info:
+        <textarea id="extra" placeholder="Any extra details?"></textarea>
+      </label><br><br>
+
+      <button type="submit">Post</button>
+    </form>
   </div>
   <script src="nigeria-data.js"></script>
   <script src="post.js"></script>
