@@ -13,3 +13,17 @@ document.addEventListener("DOMContentLoaded", () => {
     });
   }
 });
+document.addEventListener("DOMContentLoaded", () => {
+  const startBtn = document.querySelector(".btn");
+  if (startBtn) {
+    startBtn.addEventListener("click", (e) => {
+      e.preventDefault();
+      const username = localStorage.getItem("username");
+      if (username) {
+        window.location.href = "post.html";
+      } else {
+        window.location.href = "signup.html";
+      }
+    });
+  }
+});
