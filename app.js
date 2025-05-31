@@ -1,6 +1,6 @@
 document.getElementById("startPosting")?.addEventListener("click", () => {
-  const user = localStorage.getItem("user");
-  if (user) {
+  const user = JSON.parse(localStorage.getItem("user"));
+  if (user && user.name) {
     window.location.href = "post.html";
   } else {
     window.location.href = "signup.html";

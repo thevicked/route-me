@@ -3,42 +3,41 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>Create Post</title>
+  <title>Create Post - route.me</title>
   <link rel="stylesheet" href="style.css" />
 </head>
 <body>
   <div class="container">
     <h2 id="greeting">Hi, User</h2>
     <p>Where are you headed?</p>
-
     <form id="postForm">
       <h3>From</h3>
       <label>State:
         <select id="fromState" required></select>
-      </label><br>
+      </label>
       <label>City:
         <select id="fromCity" required></select>
-      </label><br>
+      </label>
       <label>Landmark:
-        <input type="text" id="landmark" placeholder="E.g. Ojota Bus Stop" required />
-      </label><br><br>
-
+        <input type="text" id="landmarkFrom" placeholder="E.g., Ojota Bus Stop" required />
+      </label>
       <h3>To</h3>
       <label style="display: flex; align-items: center; gap: 8px;">
         <input type="checkbox" id="sameCity" checked />
         Same as 'From'
-      </label><br>
+      </label>
       <label>State:
         <select id="toState" disabled required></select>
-      </label><br>
+      </label>
       <label>City:
         <select id="toCity" disabled required></select>
-      </label><br><br>
-
+      </label>
+      <label>Landmark:
+        <input type="text" id="landmarkTo" placeholder="E.g., CMS Bus Stop" />
+      </label>
       <label>Additional Info:
         <textarea id="extra" placeholder="Any extra details?"></textarea>
-      </label><br><br>
-
+      </label>
       <button type="submit">Post</button>
     </form>
   </div>

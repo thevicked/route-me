@@ -1,39 +1,35 @@
 document.addEventListener("DOMContentLoaded", () => {
-  const user = JSON.parse(localStorage.getItem("user"));
-  document.getElementById("username").textContent = user?.name || "Guest";
+  const user = JSON.parse(localStorage.getItem("user"))?.name || "User";
+  document.getElementById("greeting").textContent = `Hi, ${user}`;
 
-  populateStates("fromState", "fromCity");
-  populateStates("toState", "toCity");
-
-  const sameCheckbox = document.getElementById("sameLocation");
-  const toLocation = document.getElementById("toLocation");
-  sameCheckbox.addEventListener("change", () => {
-    toLocation.style.display = sameCheckbox.checked ? "none" : "block";
-  });
-
-  document.getElementById("submitPost").addEventListener("click", () => {
+  const postForm = document.getElementById("postForm");
+  postForm.addEventListener("submit", (e) => {
+    e.preventDefault();
     const fromState = document.getElementById("fromState").value;
     const fromCity = document.getElementById("fromCity").value;
-    const toSame = document.getElementById("sameLocation").checked;
+    const landmarkFrom = document.getElementById("landmarkFrom").value;
+    const toSame = document.getElementById("sameCity").checked;
     const toState = toSame ? fromState : document.getElementById("toState").value;
     const toCity = toSame ? fromCity : document.getElementById("toCity").value;
-    const landmark = document.getElementById("landmark").value.trim();
-    const extra = document.getElementById("extra").value.trim();
-
-    if (!landmark) {
-      alert("Please enter a landmark or description.");
-      return;
-    }
+    const landmarkTo = document.getElementById("landmarkTo").value;
+    const extra = document.getElementById("extra").value;
 
     const post = {
-      fromState, fromCity, toState, toCity, landmark, extra,
+      name: user,
+      profilePic: "https://www.w3schools.com/howto/img_avatar.png",
+      fromState,
+      fromCity,
+      landmarkFrom,
+      toState,
+      toCity,
+      landmarkTo,
+      extra,
       timestamp: new Date().toISOString()
     };
 
     const posts = JSON.parse(localStorage.getItem("posts")) || [];
     posts.unshift(post);
     localStorage.setItem("posts", JSON.stringify(posts));
-
     window.location.href = "feed.html";
   });
 });
