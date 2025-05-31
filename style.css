@@ -74,3 +74,15 @@ button {
   border-radius: 6px;
   margin-bottom: 0.75rem;
 }
+select, textarea {
+  width: 100%;
+  padding: 0.75rem;
+  margin-bottom: 1rem;
+  border-radius: 5px;
+  border: 1px solid #ccc;
+}
+
+textarea {
+  resize: vertical;
+  height: 80px;
+}
