@@ -3,8 +3,13 @@ document.addEventListener("DOMContentLoaded", () => {
   if (form) {
     form.addEventListener("submit", (e) => {
       e.preventDefault();
-      alert("Account created! (This is a placeholder)");
-      window.location.href = "post.html";
+
+      const name = form.querySelector("input[type='text']").value.trim();
+      if (name) {
+        localStorage.setItem("username", name);
+        alert("Welcome, " + name + "!");
+        window.location.href = "post.html";
+      }
     });
   }
 });
