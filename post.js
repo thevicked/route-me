@@ -1,36 +1,3 @@
-const statesAndCities = {
-  Lagos: ["Ikeja", "Yaba", "Lekki", "Epe", "Badagry"],
-  Abuja: ["Garki", "Wuse", "Maitama", "Asokoro"],
-  Rivers: ["Port Harcourt", "Bonny", "Eleme"],
-  Enugu: ["Enugu", "Nsukka"],
-  Kano: ["Kano", "Wudil"],
-};
-
-function populateStates(stateSelectId, citySelectId) {
-  const stateSelect = document.getElementById(stateSelectId);
-  const citySelect = document.getElementById(citySelectId);
-
-  stateSelect.innerHTML = `<option value="">Select State</option>`;
-  Object.keys(statesAndCities).forEach((state) => {
-    const option = document.createElement("option");
-    option.value = state;
-    option.textContent = state;
-    stateSelect.appendChild(option);
-  });
-
-  stateSelect.addEventListener("change", () => {
-    const selected = stateSelect.value;
-    citySelect.innerHTML = `<option value="">Select City</option>`;
-    if (statesAndCities[selected]) {
-      statesAndCities[selected].forEach((city) => {
-        const option = document.createElement("option");
-        option.value = city;
-        option.textContent = city;
-        citySelect.appendChild(option);
-      });
-    }
-  });
-}
 
 document.addEventListener("DOMContentLoaded", () => {
   const username = localStorage.getItem("username") || "User";
