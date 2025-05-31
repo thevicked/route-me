@@ -17,10 +17,20 @@
     <p>Where are you headed?</p>
 
     <section id="post-form">
-      <input id="from-input" type="text" placeholder="From" />
-      <input id="to-input" type="text" placeholder="To" />
-      <button id="post-btn">Post</button>
-    </section>
+  <h3>From</h3>
+  <select id="from-state"></select>
+  <select id="from-city"></select>
+  <input id="from-text" type="text" placeholder="Landmark or detail" />
+
+  <h3>To</h3>
+  <select id="to-state"></select>
+  <select id="to-city"></select>
+  <input id="to-text" type="text" placeholder="Landmark or detail" />
+
+  <textarea id="info-text" placeholder="Additional information..."></textarea>
+
+  <button id="post-btn">Post</button>
+</section>
 
     <section id="feed">
       <!-- Posts will appear here -->
