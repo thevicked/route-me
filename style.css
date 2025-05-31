@@ -45,3 +45,34 @@ textarea {
   resize: vertical;
   height: 80px;
 }
+
+.post {
+  background: #e0f7f7;
+  padding: 1rem;
+  border-radius: 6px;
+  margin-bottom: 1rem;
+}
+
+.route-box {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.route-input {
+  flex: 1;
+}
+
+.route-btn {
+  padding: 0.5rem 1rem;
+  background: #007777;
+  color: white;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+}
+
+.comments div {
+  margin-top: 0.5rem;
+  padding-left: 1rem;
+}

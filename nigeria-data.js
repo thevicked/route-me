@@ -23,7 +23,7 @@ const statesAndCities = {
   Kebbi: ["Birnin Kebbi", "Argungu"],
   Kogi: ["Lokoja", "Okene"],
   Kwara: ["Ilorin", "Offa"],
-  Lagos: ["Ikeja", "Lekki"],
+  Lagos: ["Ikeja", "Lekki", "Epe", "Badagry", "Yaba"],
   Nasarawa: ["Lafia", "Keffi"],
   Niger: ["Minna", "Bida"],
   Ogun: ["Abeokuta", "Ijebu-Ode"],
@@ -31,12 +31,11 @@ const statesAndCities = {
   Osun: ["Osogbo", "Ife"],
   Oyo: ["Ibadan", "Ogbomoso"],
   Plateau: ["Jos", "Pankshin"],
-  Rivers: ["Port Harcourt", "Bonny"],
+  Rivers: ["Port Harcourt", "Bonny", "Eleme"],
   Sokoto: ["Sokoto", "Tambuwal"],
   Taraba: ["Jalingo", "Bali"],
   Yobe: ["Damaturu", "Potiskum"],
-  Zamfara: ["Gusau", "Kaura"],
-  FCT: ["Abuja", "Gwagwalada"]
+  Zamfara: ["Gusau", "Kaura"]
 };
 
 function populateStates(stateSelectId, citySelectId) {
