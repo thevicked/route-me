@@ -5,13 +5,22 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>route.me</title>
   <link rel="stylesheet" href="style.css" />
+  <style>
+    .logo-icon {
+      display: block;
+      margin: 20px auto 10px auto;
+      width: 60px;
+    }
+  </style>
 </head>
 <body>
   <div class="container">
-    <h1 style="color: teal;">Welcome to <span style="font-weight: bold;">route.me</span></h1>
-    <p>Your go-to app for requesting and giving directions.</p>
-    <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Direction Icon" width="100" />
-    <button id="startPosting">Start Posting</button>
+    <img src="https://cdn-icons-png.flaticon.com/512/684/684908.png" alt="Direction Icon" class="logo-icon" />
+    <h1 style="color: teal; text-align: center;">Welcome to <span style="font-weight: bold;">route.me</span></h1>
+    <p style="text-align: center;">Your go-to app for requesting and giving directions.</p>
+    <div style="text-align: center; margin-top: 20px;">
+      <button id="startPosting">Start Posting</button>
+    </div>
   </div>
   <script src="app.js"></script>
 </body>
