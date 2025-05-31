@@ -1,39 +1,37 @@
-
 document.addEventListener("DOMContentLoaded", () => {
-  const username = localStorage.getItem("username") || "User";
-  document.getElementById("greeting").textContent = `Hi, ${username}`;
+  const user = JSON.parse(localStorage.getItem("user"));
+  document.getElementById("username").textContent = user?.name || "Guest";
 
-  populateStates("from-state", "from-city");
-  populateStates("to-state", "to-city");
+  populateStates("fromState", "fromCity");
+  populateStates("toState", "toCity");
 
-  const postBtn = document.getElementById("post-btn");
-  const sameLocation = document.getElementById("same-location");
-  const toSection = document.getElementById("to-section");
-
-  sameLocation.addEventListener("change", () => {
-    toSection.style.display = sameLocation.checked ? "none" : "block";
+  const sameCheckbox = document.getElementById("sameLocation");
+  const toLocation = document.getElementById("toLocation");
+  sameCheckbox.addEventListener("change", () => {
+    toLocation.style.display = sameCheckbox.checked ? "none" : "block";
   });
 
-  postBtn.addEventListener("click", () => {
-    const fromState = document.getElementById("from-state").value;
-    const fromCity = document.getElementById("from-city").value;
-    const toState = sameLocation.checked ? fromState : document.getElementById("to-state").value;
-    const toCity = sameLocation.checked ? fromCity : document.getElementById("to-city").value;
-    const fromText = document.getElementById("from-text").value;
-    const toText = document.getElementById("to-text").value;
-    const infoText = document.getElementById("info-text").value;
+  document.getElementById("submitPost").addEventListener("click", () => {
+    const fromState = document.getElementById("fromState").value;
+    const fromCity = document.getElementById("fromCity").value;
+    const toSame = document.getElementById("sameLocation").checked;
+    const toState = toSame ? fromState : document.getElementById("toState").value;
+    const toCity = toSame ? fromCity : document.getElementById("toCity").value;
+    const landmark = document.getElementById("landmark").value.trim();
+    const extra = document.getElementById("extra").value.trim();
 
-    const postObj = {
-      username,
-      from: { state: fromState, city: fromCity, text: fromText },
-      to: { state: toState, city: toCity, text: toText },
-      info: infoText,
-      timestamp: Date.now()
+    if (!landmark) {
+      alert("Please enter a landmark or description.");
+      return;
+    }
+
+    const post = {
+      fromState, fromCity, toState, toCity, landmark, extra,
+      timestamp: new Date().toISOString()
     };
 
-    // Get existing posts or initialize
-    const posts = JSON.parse(localStorage.getItem("posts") || "[]");
-    posts.unshift(postObj);
+    const posts = JSON.parse(localStorage.getItem("posts")) || [];
+    posts.unshift(post);
     localStorage.setItem("posts", JSON.stringify(posts));
 
     window.location.href = "feed.html";

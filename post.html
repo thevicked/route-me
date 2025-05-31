@@ -1,46 +1,26 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="UTF-8">
-  <title>Posts | route.me</title>
-  <link rel="stylesheet" href="style.css">
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Post - route.me</title>
+  <link rel="stylesheet" href="style.css" />
 </head>
 <body>
-  <nav>
-    <h1>route.me</h1>
-    <a href="index.html">Home</a>
-  </nav>
-
-  <main class="post-page">
-    <h2 id="greeting">Hi, User</h2>
+  <div class="container">
+    <h2>Hi, <span id="username"></span></h2>
     <p>Where are you headed?</p>
-
-    <section id="post-form">
-      <h3>From</h3>
-      <select id="from-state"></select>
-      <select id="from-city"></select>
-      <input id="from-text" type="text" placeholder="Landmark or detail" />
-
-      <label style="display: inline-flex; align-items: center;">
-        <input type="checkbox" id="same-location" checked style="margin-right: 0.5rem;"/>
-        To same state and city
-      </label>
-
-      <div id="to-section" style="display: none;">
-        <h3>To</h3>
-        <select id="to-state"></select>
-        <select id="to-city"></select>
-      </div>
-
-      <input id="to-text" type="text" placeholder="Destination landmark" />
-
-      <textarea id="info-text" placeholder="Additional information..."></textarea>
-
-      <button id="post-btn">Post</button>
-    </section>
-  </main>
-
+    <label>From State: <select id="fromState"></select></label>
+    <label>From City: <select id="fromCity"></select></label>
+    <label><input type="checkbox" id="sameLocation" checked /> To same state and city</label>
+    <div id="toLocation" style="display:none;">
+      <label>To State: <select id="toState"></select></label>
+      <label>To City: <select id="toCity"></select></label>
+    </div>
+    <input type="text" id="landmark" placeholder="Landmark / Description" required />
+    <textarea id="extra" placeholder="Additional Information"></textarea>
+    <button id="submitPost">Post</button>
+  </div>
   <script src="nigeria-data.js"></script>
   <script src="post.js"></script>
 </body>
