@@ -28,7 +28,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <div style="display: flex; align-items: center; gap: 10px;">
         <img src="${p.profilePic}" alt="Profile Picture" class="avatar"/>
         <strong>${p.name}</strong>
-      </div>
+      </div><div class="post-content">
 </br>
       <p><strong>From:</strong> ${p.fromCity}, ${p.fromState}</p>
       <p><strong>Landmark:</strong> ${p.landmarkFrom}</p>
@@ -37,7 +37,7 @@ document.addEventListener("DOMContentLoaded", () => {
       <p><strong>Landmark:</strong> ${p.landmarkTo}</p>
 </br>
       <p><strong>Details:</strong> ${p.extra}</p>
-</br>
+</br></div>
       <div class="route-box">
         <input type="text" placeholder="Suggest a route..." class="route-input"/>
         <button class="route-btn">Route</button>
