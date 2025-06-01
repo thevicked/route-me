@@ -1,172 +1,121 @@
-/* Base styling */
 body {
+  font-family: Arial, sans-serif;
+  background-color: #f0f4f3;
   margin: 0;
-  font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
-  background-color: #f0f4f4;
-  color: #333;
-  line-height: 1.5;
+  padding: 0;
 }
 
 .container {
-  max-width: 700px;
-  margin: 0 auto;
+  max-width: 600px;
+  margin: auto;
   padding: 1rem;
+  background-color: white;
+  box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+  border-radius: 8px;
 }
 
-header {
-  text-align: center;
-  padding: 2rem 1rem 1rem;
-}
-
-header img {
-  width: 50px;
-  height: 50px;
-  margin-bottom: 1rem;
-}
-
-h1, h2 {
-  margin: 0.5rem 0;
+h2, h3, p {
   color: #00796b;
+  text-align: center;
 }
 
-form {
-  background-color: #fff;
-  padding: 1.5rem;
-  border-radius: 10px;
-  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
-}
-
-label {
+form label {
   display: block;
-  margin-top: 1rem;
-  font-weight: 500;
+  margin: 10px 0 5px;
 }
 
 input[type="text"],
 input[type="email"],
 input[type="password"],
 select,
-textarea {
+textarea,
+button {
   width: 100%;
-  padding: 0.6rem;
-  margin-top: 0.25rem;
+  padding: 10px;
+  margin-bottom: 10px;
   border: 1px solid #ccc;
-  border-radius: 6px;
-  font-size: 1rem;
-  box-sizing: border-box;
+  border-radius: 4px;
 }
 
 textarea {
   resize: vertical;
-  min-height: 80px;
 }
 
 button {
-  display: block;
-  width: 100%;
-  padding: 0.75rem;
-  margin-top: 1.5rem;
   background-color: #00796b;
   color: white;
-  font-size: 1rem;
   border: none;
-  border-radius: 6px;
   cursor: pointer;
-  transition: background-color 0.3s ease;
+  font-size: 16px;
 }
 
 button:hover {
-  background-color: #005f57;
+  background-color: #005f56;
 }
 
-.checkbox-row {
+.logo-icon {
+  display: block;
+  margin: 20px auto 10px auto;
+  width: 60px;
+}
+
+.post {
   display: flex;
-  align-items: center;
-  margin-top: 1rem;
-}
-
-.checkbox-row input[type="checkbox"] {
-  margin-right: 0.5rem;
-}
-
-/* Feed post styling */
-.feed-heading {
-  text-align: center;
-  margin-bottom: 1.5rem;
-  font-size: 1.8rem;
-  font-weight: bold;
+  gap: 10px;
+  margin-bottom: 1rem;
+  padding: 1rem;
+  background: #e0f7f7;
+  border-radius: 6px;
 }
 
 .post-card {
-  background-color: white;
-  border-radius: 10px;
+  max-width: 600px;         /* Limits width for better readability */
+  width: 100%;              /* Responsive sizing */
+  margin: 0 auto 1rem auto; /* Centers post */
   padding: 1rem;
-  margin-bottom: 1.25rem;
-  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.05);
-  display: flex;
-  gap: 1rem;
-  max-width: 100%;
-  word-wrap: break-word;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
+  word-wrap: break-word;    /* Ensures long text wraps */
   overflow-wrap: break-word;
   box-sizing: border-box;
 }
 
-.post-card img.profile-pic {
-  width: 48px;
-  height: 48px;
+.avatar {
+  width: 40px;
+  height: 40px;
   border-radius: 50%;
-  object-fit: cover;
 }
 
-.post-content {
+.route-box {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 0.5rem;
+}
+
+.route-input {
   flex: 1;
 }
 
-.post-content h3 {
-  margin: 0;
-  font-size: 1.1rem;
-  color: #00796b;
-}
-
-.post-content p {
-  margin: 0.25rem 0;
-}
-
-.comment-button {
-  margin-top: 0.5rem;
-  color: #00796b;
-  background: none;
+.route-btn {
+  padding: 0.5rem 1rem;
+  background: #00796b;
+  color: white;
   border: none;
+  border-radius: 5px;
   cursor: pointer;
-  font-size: 0.9rem;
-  padding: 0;
 }
 
-.comment-button:hover {
-  text-decoration: underline;
+.comments div {
+  margin-top: 0.5rem;
+  padding-left: 1rem;
 }
 
-/* Responsive layout */
 @media (max-width: 600px) {
-  body {
+  .container {
     padding: 0.5rem;
   }
-
-  .container {
-    padding: 1rem 0.5rem;
-  }
-
-  .post-card {
-    flex-direction: column;
-    align-items: flex-start;
-  }
-
-  .post-card img.profile-pic {
-    width: 40px;
-    height: 40px;
-  }
-
   button {
-    font-size: 0.95rem;
+    font-size: 14px;
   }
 }
