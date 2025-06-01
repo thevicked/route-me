@@ -66,6 +66,10 @@ button:hover {
   padding: 1rem;
   background: #e0f7f7;
   border-radius: 6px;
+  word-wrap: break-word;    
+/* Ensures long text wraps */
+  overflow-wrap: break-word;
+  box-sizing: border-box;
 }
 
 .post-card {
