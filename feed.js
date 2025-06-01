@@ -22,32 +22,32 @@ document.addEventListener("DOMContentLoaded", () => {
   const allPosts = [...posts, ...mockPosts];
 
   allPosts.forEach((p, i) => {
-    const postDiv = document.createElement("div");
-    postDiv.className = "post";
-    postDiv.innerHTML = `
-      <div style="display: flex; align-items: center; gap: 10px;">
-        <img src="${p.profilePic}" alt="Profile Picture" class="avatar"/>
-        <strong>${p.name}</strong>
-      </div><div class="post-content">
-</br>
+  const postDiv = document.createElement("div");
+  postDiv.className = "post";
+  postDiv.innerHTML = `
+    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+      <img src="${p.profilePic}" alt="Profile Picture" class="avatar"/>
+      <strong>${p.name}</strong>
+    </div>
+
+    <div class="post-content">
       <p><strong>From:</strong> ${p.fromCity}, ${p.fromState}</p>
       <p><strong>Landmark:</strong> ${p.landmarkFrom}</p>
-</br>
       <p><strong>To:</strong> ${p.toCity}, ${p.toState}</p>
       <p><strong>Landmark:</strong> ${p.landmarkTo}</p>
-</br>
       <p><strong>Details:</strong> ${p.extra}</p>
-</br></div>
-      <div class="route-box">
-        <input type="text" placeholder="Suggest a route..." class="route-input"/>
-        <button class="route-btn">Route</button>
-      </div>
-      <div class="comments"></div>
-      <hr/>
-    `;
-    feed.appendChild(postDiv);
-  });
+    </div>
 
+    <div class="route-box">
+      <input type="text" placeholder="Suggest a route..." class="route-input"/>
+      <button class="route-btn">Route</button>
+    </div>
+
+    <div class="comments"></div>
+    <hr/>
+  `;
+  feed.appendChild(postDiv);
+});
   document.querySelectorAll(".route-btn").forEach((btn) => {
     btn.addEventListener("click", () => {
       const input = btn.previousElementSibling;
