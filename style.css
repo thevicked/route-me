@@ -71,20 +71,11 @@ button:hover {
   overflow-wrap: break-word;
   box-sizing: border-box;
 }
-
-.post-card {
-  max-width: 600px;         /* Limits width for better readability */
-  width: 100%;              /* Responsive sizing */
-  margin: 0 auto 1rem auto; /* Centers post */
-  padding: 1rem;
-  background-color: #ffffff;
-  border-radius: 10px;
-  box-shadow: 0 2px 5px rgba(0,0,0,0.1);
-  word-wrap: break-word;    /* Ensures long text wraps */
+.post-content {
+  flex: 1;
+  word-wrap: break-word;
   overflow-wrap: break-word;
-  box-sizing: border-box;
 }
-
 .avatar {
   width: 40px;
   height: 40px;
