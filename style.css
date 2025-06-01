@@ -59,7 +59,7 @@ button:hover {
   width: 60px;
 }
 
-.post-card {
+.post {
   display: flex;
   gap: 10px;
   margin-bottom: 1rem;
@@ -68,7 +68,7 @@ button:hover {
   border-radius: 6px;
 }
 
-.post {
+.post-card {
   max-width: 600px;         /* Limits width for better readability */
   width: 100%;              /* Responsive sizing */
   margin: 0 auto 1rem auto; /* Centers post */
