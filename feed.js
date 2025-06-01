@@ -25,7 +25,7 @@ document.addEventListener("DOMContentLoaded", () => {
   const postDiv = document.createElement("div");
   postDiv.className = "post";
   postDiv.innerHTML = `
-    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
+    <div style=" align-items: center; gap: 10px; margin-bottom: 10px;">
       <img src="${p.profilePic}" alt="Profile Picture" class="avatar"/>
       <strong>${p.name}</strong>
     </div>
