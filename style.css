@@ -314,6 +314,7 @@ button:hover {
 }
 
 .logo-text {
+  color: #00796b;
   font-size: 20px;
   font-weight: bold;
 }
