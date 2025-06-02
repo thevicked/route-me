@@ -3,6 +3,58 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("greeting").textContent = `Hi, ${user}`;
 
   const postForm = document.getElementById("postForm");
+  const imageInput = document.getElementById("imageUpload");
+  const previewContainer = document.getElementById("imagePreview");
+
+  let selectedImages = []; // Array of { file, caption }
+
+  imageInput.addEventListener("change", () => {
+    const newFiles = Array.from(imageInput.files);
+    selectedImages.push(...newFiles.map(f => ({ file: f, caption: "" })));
+    renderPreviews();
+    imageInput.value = ""; // reset to allow reselecting same files later
+  });
+
+  function renderPreviews() {
+    previewContainer.innerHTML = "";
+
+    selectedImages.forEach((item, index) => {
+      const reader = new FileReader();
+      reader.onload = (e) => {
+        const previewDiv = document.createElement("div");
+        previewDiv.className = "preview-container";
+
+        const img = document.createElement("img");
+        img.src = e.target.result;
+        img.className = "preview-thumb";
+
+        const removeBtn = document.createElement("button");
+        removeBtn.textContent = "❌";
+        removeBtn.className = "remove-btn";
+        removeBtn.onclick = () => {
+          selectedImages.splice(index, 1);
+          renderPreviews();
+        };
+
+        const captionInput = document.createElement("input");
+        captionInput.type = "text";
+        captionInput.placeholder = "Add caption";
+        captionInput.value = item.caption;
+        captionInput.className = "caption-input";
+        captionInput.oninput = (ev) => {
+          selectedImages[index].caption = ev.target.value;
+        };
+
+        previewDiv.appendChild(img);
+        previewDiv.appendChild(removeBtn);
+        previewDiv.appendChild(captionInput);
+
+        previewContainer.appendChild(previewDiv);
+      };
+      reader.readAsDataURL(item.file);
+    });
+  }
+
   postForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
@@ -14,11 +66,12 @@ document.addEventListener("DOMContentLoaded", () => {
     const toCity = toSame ? fromCity : document.getElementById("toCity").value;
     const landmarkTo = document.getElementById("landmarkTo").value;
     const extra = document.getElementById("extra").value;
-    const imageInput = document.getElementById("imageUpload");
-    const files = Array.from(imageInput.files);
 
-    // Convert each file to base64
-    const images = await Promise.all(files.map(file => toBase64(file)));
+    const images = await Promise.all(
+      selectedImages.map(({ file, caption }) =>
+        toBase64(file).then(dataUrl => ({ dataUrl, caption }))
+      )
+    );
 
     const post = {
       name: user,
@@ -40,7 +93,6 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "feed.html";
   });
 
-  // Helper to convert a File to base64 string
   function toBase64(file) {
     return new Promise((resolve, reject) => {
       const reader = new FileReader();
