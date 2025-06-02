@@ -47,7 +47,15 @@ document.addEventListener("DOMContentLoaded", () => {
         <br>
         <p><strong>Details:</strong> ${p.extra}</p>
 
-        ${
+      </div>
+      <div class="route-box">
+        <input type="text" placeholder="Suggest a route..." class="route-input"/>
+        <button class="route-btn">Route</button>
+      </div>
+      <div class="comments"></div>
+      <hr/>
+    `;
+ ${
           Array.isArray(p.images) && p.images.length
             ? `<div class="post-images">
                 ${p.images
@@ -57,16 +65,29 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>`
             : ""
         }
-      </div>
-      <div class="route-box">
-        <input type="text" placeholder="Suggest a route..." class="route-input"/>
-        <button class="route-btn">Route</button>
-      </div>
-      <div class="comments"></div>
-      <hr/>
-    `;
     feed.appendChild(postDiv);
   });
+// Lightbox functionality
+const lightbox = document.getElementById("lightbox");
+const lightboxImg = document.getElementById("lightbox-img");
+const closeBtn = document.querySelector(".lightbox-close");
+
+document.querySelectorAll(".post-images img").forEach((img) => {
+  img.addEventListener("click", () => {
+    lightboxImg.src = img.src;
+    lightbox.classList.remove("hidden");
+  });
+});
+
+closeBtn.addEventListener("click", () => {
+  lightbox.classList.add("hidden");
+});
+
+lightbox.addEventListener("click", (e) => {
+  if (e.target === lightbox) {
+    lightbox.classList.add("hidden");
+  }
+});
 
   // Route comment handler
   document.querySelectorAll(".route-btn").forEach((btn) => {
