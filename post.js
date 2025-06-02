@@ -57,11 +57,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const landmarkTo = document.getElementById("landmarkTo").value;
     const extra = document.getElementById("extra").value;
 
-    const images = await Promise.all(
-      selectedImages.map(({ file, caption }) =>
-        toBase64(file).then(dataUrl => ({ dataUrl, caption }))
-      )
-    );
+    console.log("Selected images:", selectedImages);
 
     const post = {
       name: user,
