@@ -20,7 +20,6 @@ h2, h3, p {
 }
 
 left-align {
-  word-wrap: break-word;
   text-align: left;
 color: #00796b;
 }
