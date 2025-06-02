@@ -189,6 +189,59 @@ button:hover {
   border: 1px solid #ccc;
 }
 
+.post-images {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  grid-auto-rows: 120px;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+/* Make the first image bigger */
+.post-images img:nth-child(1) {
+  grid-column: span 2;
+  grid-row: span 2;
+  object-fit: cover;
+}
+
+/* Make the second image span two columns */
+.post-images img:nth-child(2) {
+  grid-column: span 2;
+  grid-row: span 1;
+  object-fit: cover;
+}
+
+/* Other images take normal size */
+.post-images img:nth-child(n+3) {
+  object-fit: cover;
+}
+
+/* Responsive adjustment */
+@media (max-width: 768px) {
+  .post-images {
+    grid-template-columns: repeat(2, 1fr);
+    grid-auto-rows: 100px;
+  }
+  .post-images img:nth-child(1) {
+    grid-column: span 2;
+    grid-row: span 1;
+  }
+  .post-images img:nth-child(2) {
+    grid-column: span 1;
+    grid-row: span 1;
+  }
+}
+@media (max-width: 480px) {
+  .post-images {
+    grid-template-columns: 1fr;
+    grid-auto-rows: auto;
+  }
+  .post-images img {
+    grid-column: auto !important;
+    grid-row: auto !important;
+    height: auto;
+  }
+}
 .remove-btn {
   position: absolute;
   top: 2px;
