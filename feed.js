@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ];
 
-  const allPosts = [...posts, ];
+  const allPosts = [...posts]; // If you want mockPosts visible, add them: [...mockPosts, ...posts]
 
   allPosts.forEach((p) => {
     const postDiv = document.createElement("div");
@@ -47,14 +47,16 @@ document.addEventListener("DOMContentLoaded", () => {
         <br>
         <p><strong>Details:</strong> ${p.extra}</p>
 
-${Array.isArray(p.images) && p.images.length
-  ? `<div class="post-images">
-      ${p.images
-        .filter(img => img && img.dataUrl)
-        .map(img => `<img src="${img.dataUrl}" alt="Post Image" />`)
-        .join("")}
-     </div>`
-  : ""}
+        ${
+          Array.isArray(p.images) && p.images.length
+            ? `<div class="post-images">
+                ${p.images
+                  .filter((img) => img && img.dataUrl)
+                  .map((img) => `<img src="${img.dataUrl}" alt="Post Image" class="post-img" />`)
+                  .join("")}
+              </div>`
+            : ""
+        }
       </div>
       <div class="route-box">
         <input type="text" placeholder="Suggest a route..." class="route-input"/>
