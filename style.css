@@ -19,6 +19,12 @@ h2, h3, p {
   text-align: center;
 }
 
+p1 {
+ color: #00796b;
+text-align: left;
+}
+
+
 form label {
   display: block;
   margin: 10px 0 5px;
