@@ -56,12 +56,17 @@ ${
               </div>`
             : ""
         }
-      </div>
-      <div class="route-box">
+
+
+<div class="route-box">
         <input type="text" placeholder="Suggest a route..." class="route-input"/>
         <button class="route-btn">Route</button>
       </div>
       <div class="comments"></div>
+
+
+      </div>
+      
       <hr/>
     `;
  
