@@ -46,9 +46,13 @@ document.addEventListener("DOMContentLoaded", () => {
         <p><strong>Landmark:</strong> ${p.landmarkTo}</p>
         <br>
         <p><strong>Details:</strong> ${p.extra}</p>
-        ${Array.isArray(p.images) && p.images.length
+
+${Array.isArray(p.images) && p.images.length
   ? `<div class="post-images">
-      ${p.images.map(img => `<img src="${img.dataUrl}" alt="Post Image" />`).join("")}
+      ${p.images
+        .filter(img => img && img.dataUrl)
+        .map(img => `<img src="${img.dataUrl}" alt="Post Image" />`)
+        .join("")}
      </div>`
   : ""}
       </div>
