@@ -78,7 +78,24 @@ document.getElementById("toState").addEventListener("change", () => {
     }
   });
 
-  document.getElementById("sameCity").addEventListener("change", (e) => {
+ document.getElementById("fromCity").addEventListener("change", () => {
+  const value = document.getElementById("fromCity").value;
+  document.getElementById("fromCityOther").style.display = value === "Other" ? "block" : "none";
+
+  // If sameCity is checked, mirror this to "toCity"
+  if (document.getElementById("sameCity").checked) {
+    document.getElementById("toCity").value = value;
+    document.getElementById("toCityOther").style.display = value === "Other" ? "block" : "none";
+    document.getElementById("toCityOther").value = document.getElementById("fromCityOther").value;
+  }
+});
+
+document.getElementById("toCity").addEventListener("change", () => {
+  const value = document.getElementById("toCity").value;
+  document.getElementById("toCityOther").style.display = value === "Other" ? "block" : "none";
+});
+
+ document.getElementById("sameCity").addEventListener("change", (e) => {
   const disabled = e.target.checked;
   const fromState = document.getElementById("fromState").value;
   const fromCity = document.getElementById("fromCity").value;
