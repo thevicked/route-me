@@ -39,9 +39,11 @@
         <textarea id="extra" placeholder="Any extra details?"></textarea>
       </label>
 <div class="image-upload-wrapper">
-  <label for="imageUpload" class="custom-upload-btn">Upload Image(s)</label>
-  <input type="file" id="imageUpload" accept="image/*" multiple /></br>
-  <small>You can take a picture or choose from your device. You may select multiple.</small>
+  <label for="imageUpload" class="custom-upload-btn">📷 Upload Image(s)</label>
+  <input type="file" id="imageUpload" accept="image/*" multiple />
+  <small>You can take a picture or choose from your device. Max 5 images.</small>
+
+  <div id="imagePreview" class="image-preview-grid"></div>
 </div>
       <button type="submit">Post</button>
     </form>
