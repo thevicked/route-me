@@ -8,7 +8,10 @@ document.getElementById("startPosting")?.addEventListener("click", () => {
 });
 
 document.getElementById("signupBtn")?.addEventListener("click", () => {
-  const name = document.getElementById("name").value.trim();
+  
+const surname = document.getElementById("surname").value.trim();
+const otherNames = document.getElementById("otherNames").value.trim();
+const name = `${otherNames} ${surname}`;
   const email = document.getElementById("email").value.trim();
   const password = document.getElementById("password").value;
 
