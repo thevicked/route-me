@@ -52,7 +52,7 @@ document.addEventListener("DOMContentLoaded", () => {
   btn.addEventListener("click", () => {
     const input = btn.previousElementSibling;
     const commentBox = btn.parentElement.nextElementSibling;
-    const username = localStorage.getItem("name") || "Anonymous";
+    const username = localStorage.getItem("user") || "Anonymous";
     
     if (input.value.trim()) {
       const comment = document.createElement("div");
