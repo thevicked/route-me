@@ -108,6 +108,8 @@ button:hover {
   flex: 1 1 250px;     /* Grow/shrink with a sensible base size */
   max-width: 300px;
   min-width: 200px;
+  height: 40px; /* Set a fixed height */
+  box-sizing: border-box;
 }
 
 .route-btn {
