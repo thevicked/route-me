@@ -69,7 +69,9 @@ document.addEventListener("DOMContentLoaded", () => {
       document.getElementById("toCity").value = document.getElementById("fromCity").value;
     }
   });
-
+document.getElementById("toState").addEventListener("change", () => {
+  populateCities("toState", "toCity");
+});
   document.getElementById("fromCity").addEventListener("change", () => {
     if (document.getElementById("sameCity").checked) {
       document.getElementById("toCity").value = document.getElementById("fromCity").value;
