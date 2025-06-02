@@ -60,7 +60,7 @@ button:hover {
 }
 
 .post {
-  display: flex;
+  
   gap: 10px;
   margin-bottom: 1rem;
   padding: 1rem;
