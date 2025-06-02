@@ -134,6 +134,39 @@ button:hover {
     flex: 1 1 100%; /* Full width on smaller screens */
   }
 }
+.image-upload-wrapper {
+  margin: 15px 0;
+}
+
+.image-upload-wrapper label {
+  display: block;
+  font-weight: bold;
+  color: #00796b;
+  margin-bottom: 5px;
+}
+
+#imageUpload {
+  display: block;
+  width: 100%;
+  padding: 8px;
+  border: 2px dashed #00796b;
+  border-radius: 6px;
+  background-color: #e0f7f7;
+  color: #333;
+  cursor: pointer;
+  transition: background-color 0.3s ease;
+}
+
+#imageUpload:hover {
+  background-color: #d0f0f0;
+}
+
+.image-upload-wrapper small {
+  display: block;
+  margin-top: 5px;
+  color: #666;
+  font-size: 12px;
+}
 
 @media (max-width: 600px) {
  
