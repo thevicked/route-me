@@ -62,8 +62,8 @@ document.addEventListener("DOMContentLoaded", () => {
 let images;
   try {
     images = await Promise.all(
-      selectedImages.map(({ file, caption }) =>
-        toBase64(file).then(dataUrl => ({ dataUrl, caption }))
+      selectedImages.map(({ file }) =>
+        toBase64(file).then(dataUrl => ({ dataUrl }))
       )
     );
   } catch (error) {
