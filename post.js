@@ -57,6 +57,17 @@ console.log("Selected images:", selectedImages);
     const toCity = toSame ? fromCity : document.getElementById("toCity").value;
     const landmarkTo = document.getElementById("landmarkTo").value;
     const extra = document.getElementById("extra").value;
+const fromCitySelect = document.getElementById("fromCity");
+const fromCityOther = document.getElementById("fromCityOther");
+const toCitySelect = document.getElementById("toCity");
+const toCityOther = document.getElementById("toCityOther");
+
+const fromCity = fromCitySelect.value === "Other" ? fromCityOther.value : fromCitySelect.value;
+const toCity = toSame
+  ? fromCity
+  : toCitySelect.value === "Other"
+    ? toCityOther.value
+    : toCitySelect.value;
 
     
 
