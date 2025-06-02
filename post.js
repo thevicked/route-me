@@ -93,12 +93,15 @@ document.addEventListener("DOMContentLoaded", () => {
     window.location.href = "feed.html";
   });
 
-  function toBase64(file) {
-    return new Promise((resolve, reject) => {
-      const reader = new FileReader();
-      reader.onloadend = () => resolve(reader.result);
-      reader.onerror = reject;
-      reader.readAsDataURL(file);
-    });
+  
+function toBase64(file) {
+  return new Promise((resolve, reject) => {
+    if (!file) return resolve(null); // prevent error if file is undefined
+    const reader = new FileReader();
+    reader.onloadend = () => resolve(reader.result);
+    reader.onerror = () => reject("Failed to read file");
+    reader.readAsDataURL(file);
+  });
+
   }
 });
