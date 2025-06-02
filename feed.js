@@ -27,7 +27,7 @@ document.addEventListener("DOMContentLoaded", () => {
     }
   ];
 
-  const allPosts = [...posts, ...mockPosts];
+  const allPosts = [...posts, ];
 
   allPosts.forEach((p) => {
     const postDiv = document.createElement("div");
