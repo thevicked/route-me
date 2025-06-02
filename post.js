@@ -3,7 +3,7 @@ document.addEventListener("DOMContentLoaded", () => {
   document.getElementById("greeting").textContent = `Hi, ${user}`;
 
   const postForm = document.getElementById("postForm");
-  postForm.addEventListener("submit", (e) => {
+  postForm.addEventListener("submit", async (e) => {
     e.preventDefault();
 
     const fromState = document.getElementById("fromState").value;
@@ -15,35 +15,38 @@ document.addEventListener("DOMContentLoaded", () => {
     const landmarkTo = document.getElementById("landmarkTo").value;
     const extra = document.getElementById("extra").value;
     const imageInput = document.getElementById("imageUpload");
-    const file = imageInput.files[0];
+    const files = Array.from(imageInput.files);
 
-    const savePost = (imageData = null) => {
-      const post = {
-        name: user,
-        profilePic: "https://www.w3schools.com/howto/img_avatar.png",
-        fromState,
-        fromCity,
-        landmarkFrom,
-        toState,
-        toCity,
-        landmarkTo,
-        extra,
-        image: imageData,
-        timestamp: new Date().toISOString()
-      };
+    // Convert each file to base64
+    const images = await Promise.all(files.map(file => toBase64(file)));
 
-      const posts = JSON.parse(localStorage.getItem("posts")) || [];
-      posts.unshift(post);
-      localStorage.setItem("posts", JSON.stringify(posts));
-      window.location.href = "feed.html";
+    const post = {
+      name: user,
+      profilePic: "https://www.w3schools.com/howto/img_avatar.png",
+      fromState,
+      fromCity,
+      landmarkFrom,
+      toState,
+      toCity,
+      landmarkTo,
+      extra,
+      images,
+      timestamp: new Date().toISOString()
     };
 
-    if (file) {
-      const reader = new FileReader();
-      reader.onloadend = () => savePost(reader.result);
-      reader.readAsDataURL(file);
-    } else {
-      savePost();
-    }
+    const posts = JSON.parse(localStorage.getItem("posts")) || [];
+    posts.unshift(post);
+    localStorage.setItem("posts", JSON.stringify(posts));
+    window.location.href = "feed.html";
   });
+
+  // Helper to convert a File to base64 string
+  function toBase64(file) {
+    return new Promise((resolve, reject) => {
+      const reader = new FileReader();
+      reader.onloadend = () => resolve(reader.result);
+      reader.onerror = reject;
+      reader.readAsDataURL(file);
+    });
+  }
 });
