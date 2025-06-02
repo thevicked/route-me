@@ -50,13 +50,15 @@ console.log("Selected images:", selectedImages);
     e.preventDefault();
 
     const fromState = document.getElementById("fromState").value;
-    const fromCity = document.getElementById("fromCity").value;
+    
     const landmarkFrom = document.getElementById("landmarkFrom").value;
     const toSame = document.getElementById("sameCity").checked;
     const toState = toSame ? fromState : document.getElementById("toState").value;
-    const toCity = toSame ? fromCity : document.getElementById("toCity").value;
+    
     const landmarkTo = document.getElementById("landmarkTo").value;
     const extra = document.getElementById("extra").value;
+
+
 const fromCitySelect = document.getElementById("fromCity");
 const fromCityOther = document.getElementById("fromCityOther");
 const toCitySelect = document.getElementById("toCity");
