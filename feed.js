@@ -46,13 +46,14 @@ document.addEventListener("DOMContentLoaded", () => {
         <p><strong>Landmark:</strong> ${p.landmarkTo}</p>
         <br>
         <p><strong>Details:</strong> ${p.extra}</p>
-        ${
-          Array.isArray(p.images) && p.images.length
-            ? `<div class="post-images">
-                ${p.images.map(img => `<img src="${img}" alt="Post Image" />`).join("")}
-               </div>`
-            : ""
-        }
+        ${Array.isArray(p.images) && p.images.length
+  ? p.images.map(img => `
+      <div style="margin-top: 10px;">
+        <img src="${img.dataUrl}" alt="Post Image" style="max-width: 100%; border-radius: 6px;" />
+        ${img.caption ? `<p style="font-size: 0.85rem; margin-top: 4px;"><em>${img.caption}</em></p>` : ""}
+      </div>
+    `).join("")
+  : ""}
       </div>
       <div class="route-box">
         <input type="text" placeholder="Suggest a route..." class="route-input"/>
