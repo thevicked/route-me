@@ -49,15 +49,17 @@ document.addEventListener("DOMContentLoaded", () => {
   feed.appendChild(postDiv);
 });
   document.querySelectorAll(".route-btn").forEach((btn) => {
-    btn.addEventListener("click", () => {
-      const input = btn.previousElementSibling;
-      const commentBox = btn.parentElement.nextElementSibling;
-      if (input.value.trim()) {
-        const comment = document.createElement("div");
-        comment.textContent = `→ ${input.value.trim()}`;
-        commentBox.appendChild(comment);
-        input.value = "";
-      }
-    });
+  btn.addEventListener("click", () => {
+    const input = btn.previousElementSibling;
+    const commentBox = btn.parentElement.nextElementSibling;
+    const username = localStorage.getItem("username") || "Anonymous";
+    
+    if (input.value.trim()) {
+      const comment = document.createElement("div");
+      comment.innerHTML = `<strong>${username}:</strong> ${input.value.trim()}`;
+      commentBox.appendChild(comment);
+      input.value = "";
+    }
   });
+});
 });
