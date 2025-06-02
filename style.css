@@ -75,6 +75,7 @@ button:hover {
   word-wrap: break-word;
   overflow-wrap: break-word;
   text-align: left;
+  align-items: left;
 }
 
 .avatar {
