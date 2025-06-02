@@ -20,7 +20,6 @@ h2, h3, p {
 }
 
 left-align {
-flex: 1;
   word-wrap: break-word;
   overflow-wrap: break-word;
   text-align: left;
