@@ -134,31 +134,30 @@ button:hover {
     flex: 1 1 100%; /* Full width on smaller screens */
   }
 }
-.image-upload-wrapper {
-  margin: 15px 0;
-}
-
-.image-upload-wrapper label {
-  display: block;
-  font-weight: bold;
-  color: #00796b;
-  margin-bottom: 5px;
-}
-
+/* Hide default file input */
 #imageUpload {
-  display: block;
-  width: 100%;
-  padding: 8px;
-  border: 2px dashed #00796b;
+  display: none;
+}
+
+/* Custom-styled label acting as upload button */
+.custom-upload-btn {
+  display: inline-block;
+  background-color: #00796b;
+  color: white;
+  padding: 10px 15px;
   border-radius: 6px;
-  background-color: #e0f7f7;
-  color: #333;
   cursor: pointer;
+  text-align: center;
   transition: background-color 0.3s ease;
 }
 
-#imageUpload:hover {
-  background-color: #d0f0f0;
+.custom-upload-btn:hover {
+  background-color: #005f56;
+}
+
+.image-upload-wrapper {
+  margin: 15px 0;
+  text-align: left;
 }
 
 .image-upload-wrapper small {
