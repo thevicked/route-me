@@ -295,11 +295,14 @@ button:hover {
 
 .top-bar {
   display: flex;
-  justify-content: space-between;
   align-items: center;
   padding: 12px 20px;
-  background-color: teal;
   color: white;
+  background-color: #f9f9f4; /* milky-white */
+  border-radius: 16px;
+  margin: 10px;
+  justify-content: center;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
 }
 
 .logo {
