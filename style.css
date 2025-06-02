@@ -93,6 +93,9 @@ button:hover {
 }
 
 .route-box {
+  justify-content: center; /* Center items in the row */
+  margin-left: auto;
+  margin-right: auto;
   display: flex;
   gap: 0.5rem;
   margin-top: 0.5rem;
