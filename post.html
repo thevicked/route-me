@@ -38,9 +38,11 @@
       <label>Additional Info:
         <textarea id="extra" placeholder="Any extra details?"></textarea>
       </label>
-<label for="imageUpload">Upload Image:</label>
-<input type="file" id="imageUpload" accept="image/*" capture multiple />
-<small>You can take a picture or choose from your gallery.</small>
+<div class="image-upload-wrapper">
+  <label for="imageUpload">Upload Image:</label>
+  <input type="file" id="imageUpload" accept="image/*" multiple capture="environment" />
+  <small>You can take a picture or choose from your device. You may select multiple.</small>
+</div>
       <button type="submit">Post</button>
     </form>
   </div>
