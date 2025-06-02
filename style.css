@@ -353,8 +353,10 @@ button:hover {
 @media (max-width: 600px) {
   .route-box {
     flex-direction: column;
+    align-items: stretch;
   }
 
+  .route-input,
   .route-btn {
     width: 100%;
   }
