@@ -224,6 +224,15 @@ button:hover {
 .floating-post-btn:hover {
   background-color: #007c7c;
 }
+@media (max-width: 600px) {
+  .floating-post-btn {
+    width: 48px;
+    height: 48px;
+    font-size: 20px;
+    bottom: 16px;
+    right: 16px;
+  }
+}
 .post-img {
   max-width: 100%;
   border-radius: 8px;
