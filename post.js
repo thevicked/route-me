@@ -38,8 +38,7 @@ document.addEventListener("DOMContentLoaded", () => {
 
         previewDiv.appendChild(img);
         previewDiv.appendChild(removeBtn);
-        previewDiv.appendChild(captionInput);
-
+        
         previewContainer.appendChild(previewDiv);
       };
       reader.readAsDataURL(item.file);
