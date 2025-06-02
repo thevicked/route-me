@@ -59,6 +59,19 @@ document.addEventListener("DOMContentLoaded", () => {
 
     console.log("Selected images:", selectedImages);
 
+let images;
+  try {
+    images = await Promise.all(
+      selectedImages.map(({ file, caption }) =>
+        toBase64(file).then(dataUrl => ({ dataUrl, caption }))
+      )
+    );
+  } catch (error) {
+    alert("Error reading images. Please try again.");
+    console.error(error);
+    return; // stop submission if image processing failed
+  }
+
     const post = {
       name: user,
       profilePic: "https://www.w3schools.com/howto/img_avatar.png",
