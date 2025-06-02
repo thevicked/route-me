@@ -86,12 +86,15 @@ button:hover {
   display: flex;
   gap: 0.5rem;
   margin-top: 0.5rem;
-  flex-wrap: wrap; /* Allows input & button to wrap on smaller screens */
+  flex-wrap: wrap;
+  align-items: center;
 }
 
 .route-input {
-  flex: 1;
-  min-width: 0; /* Prevents shrinking issues in flex layout */
+  flex-grow: 1;       /* This makes input grow */
+  flex-shrink: 1;
+  flex-basis: 0;       /* Starts with no fixed size */
+  min-width: 0;        /* Prevents overflow issues */
 }
 
 .route-btn {
@@ -101,12 +104,10 @@ button:hover {
   border: none;
   border-radius: 5px;
   cursor: pointer;
-  white-space: nowrap; /* Keeps text in one line */
-  flex-shrink: 0; /* Prevents it from shrinking */
+  white-space: nowrap;
+  flex-grow: 0;
+  flex-shrink: 0;
 }
-
-/* Responsive behavior for mobile devices */
-
 
 .comments div {
   margin-top: 0.5rem;
