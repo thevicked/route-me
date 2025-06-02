@@ -25,27 +25,28 @@ document.addEventListener("DOMContentLoaded", () => {
   const postDiv = document.createElement("div");
   postDiv.className = "post";
   postDiv.innerHTML = `
-    <div style="display: flex; align-items: center; gap: 10px; margin-bottom: 10px;">
-      <img src="${p.profilePic}" alt="Profile Picture" class="avatar"/>
-      <strong>${p.name}</strong>
-    </div>
-
-    <div class="post-content">
-      <p><strong>From:</strong> ${p.fromCity}, ${p.fromState}</p>
-      <p><strong>Landmark:</strong> ${p.landmarkFrom}</p>
-      <p><strong>To:</strong> ${p.toCity}, ${p.toState}</p>
-      <p><strong>Landmark:</strong> ${p.landmarkTo}</p>
-      <p><strong>Details:</strong> ${p.extra}</p>
-    </div>
-
-    <div class="route-box">
-      <input type="text" placeholder="Suggest a route..." class="route-input"/>
-      <button class="route-btn">Route</button>
-    </div>
-
-    <div class="comments"></div>
-    <hr/>
-  `;
+  <div style="display: flex; align-items: center; gap: 10px;">
+    <img src="${p.profilePic}" alt="Profile Picture" class="avatar"/>
+    <strong>${p.name}</strong>
+  </div>
+  <div class="post-content">
+    <br>
+    <p><strong>From:</strong> ${p.fromCity}, ${p.fromState}</p>
+    <p><strong>Landmark:</strong> ${p.landmarkFrom}</p>
+    <br>
+    <p><strong>To:</strong> ${p.toCity}, ${p.toState}</p>
+    <p><strong>Landmark:</strong> ${p.landmarkTo}</p>
+    <br>
+    <p><strong>Details:</strong> ${p.extra}</p>
+    ${p.image ? `<br><img src="${p.image}" alt="Post Image" style="max-width: 100%; border-radius: 6px; margin-top: 10px;" />` : ''}
+  </div>
+  <div class="route-box">
+    <input type="text" placeholder="Suggest a route..." class="route-input"/>
+    <button class="route-btn">Route</button>
+  </div>
+  <div class="comments"></div>
+  <hr/>
+`;
   feed.appendChild(postDiv);
 });
   document.querySelectorAll(".route-btn").forEach((btn) => {
