@@ -22,7 +22,6 @@ h2, h3, p {
 .left-align {
   text-align: left;
 color: #00796b;
-flex: 1;
 word-wrap: break-word;
 overflow-wrap: break-word;
 }
