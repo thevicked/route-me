@@ -46,16 +46,7 @@ document.addEventListener("DOMContentLoaded", () => {
         <p><strong>Landmark:</strong> ${p.landmarkTo}</p>
         <br>
         <p><strong>Details:</strong> ${p.extra}</p>
-
-      </div>
-      <div class="route-box">
-        <input type="text" placeholder="Suggest a route..." class="route-input"/>
-        <button class="route-btn">Route</button>
-      </div>
-      <div class="comments"></div>
-      <hr/>
-    `;
- ${
+${
           Array.isArray(p.images) && p.images.length
             ? `<div class="post-images">
                 ${p.images
@@ -65,6 +56,15 @@ document.addEventListener("DOMContentLoaded", () => {
               </div>`
             : ""
         }
+      </div>
+      <div class="route-box">
+        <input type="text" placeholder="Suggest a route..." class="route-input"/>
+        <button class="route-btn">Route</button>
+      </div>
+      <div class="comments"></div>
+      <hr/>
+    `;
+ 
     feed.appendChild(postDiv);
   });
 // Lightbox functionality
