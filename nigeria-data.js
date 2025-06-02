@@ -79,14 +79,21 @@ document.getElementById("toState").addEventListener("change", () => {
   });
 
   document.getElementById("sameCity").addEventListener("change", (e) => {
-    const disabled = e.target.checked;
-    document.getElementById("toState").disabled = disabled;
-    document.getElementById("toCity").disabled = disabled;
+  const disabled = e.target.checked;
+  const fromState = document.getElementById("fromState").value;
+  const fromCity = document.getElementById("fromCity").value;
 
-    if (disabled) {
-      document.getElementById("toState").value = document.getElementById("fromState").value;
-      populateCities("toState", "toCity");
-      document.getElementById("toCity").value = document.getElementById("fromCity").value;
-    }
-  });
+  document.getElementById("toState").disabled = disabled;
+  document.getElementById("toCity").disabled = disabled;
+
+  if (disabled) {
+    document.getElementById("toState").value = fromState;
+    populateCities("toState", "toCity");
+    document.getElementById("toCity").value = fromCity;
+  } else {
+    // Reset toState and toCity when unchecking
+    document.getElementById("toState").value = "";
+    document.getElementById("toCity").innerHTML = '<option value="">Select City</option>';
+  }
+});
 });
