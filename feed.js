@@ -43,9 +43,6 @@ document.addEventListener("DOMContentLoaded", () => {
       ${p.images.map(img => `<img src="${img}" alt="Post Image" />`).join("")}
      </div>`
   : ""}
-      </div>
-    `).join("")
-  : ""}
 
   </div>
   <div class="route-box">
