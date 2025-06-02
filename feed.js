@@ -39,13 +39,13 @@ document.addEventListener("DOMContentLoaded", () => {
       </div>
       <div class="post-content">
         <br>
-        <p1><strong>From:</strong> ${p.fromCity}, ${p.fromState}</p1>
-        <p1><strong>Landmark:</strong> ${p.landmarkFrom}</p1>
+        <p class="left-align"><strong>From:</strong> ${p.fromCity}, ${p.fromState}</p>
+        <p class="left-align"><strong>Landmark:</strong> ${p.landmarkFrom}</p>
         <br>
-        <p1><strong>To:</strong> ${p.toCity}, ${p.toState}</p1>
-        <p1><strong>Landmark:</strong> ${p.landmarkTo}</p1>
+        <p class="left-align"><strong>To:</strong> ${p.toCity}, ${p.toState}</p>
+        <p class="left-align"><strong>Landmark:</strong> ${p.landmarkTo}</p>
         <br>
-        <p1><strong>Details:</strong> ${p.extra}</p1>
+        <p class="left-align" ><strong>Details:</strong> ${p.extra}</p>
 ${
           Array.isArray(p.images) && p.images.length
             ? `<div class="post-images">
