@@ -36,15 +36,6 @@ document.addEventListener("DOMContentLoaded", () => {
           renderPreviews();
         };
 
-        const captionInput = document.createElement("input");
-        captionInput.type = "text";
-        captionInput.placeholder = "Add caption";
-        captionInput.value = item.caption;
-        captionInput.className = "caption-input";
-        captionInput.oninput = (ev) => {
-          selectedImages[index].caption = ev.target.value;
-        };
-
         previewDiv.appendChild(img);
         previewDiv.appendChild(removeBtn);
         previewDiv.appendChild(captionInput);
