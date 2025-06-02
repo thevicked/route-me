@@ -11,6 +11,7 @@ document.addEventListener("DOMContentLoaded", () => {
   imageInput.addEventListener("change", () => {
     const newFiles = Array.from(imageInput.files);
     selectedImages.push(...newFiles.map(f => ({ file: f, caption: "" })));
+console.log("Selected images:", selectedImages);
     renderPreviews();
     imageInput.value = ""; // reset to allow reselecting same files later
   });
@@ -57,7 +58,7 @@ document.addEventListener("DOMContentLoaded", () => {
     const landmarkTo = document.getElementById("landmarkTo").value;
     const extra = document.getElementById("extra").value;
 
-    console.log("Selected images:", selectedImages);
+    
 
 let images;
   try {
