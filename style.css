@@ -240,6 +240,20 @@ button:hover {
   cursor: pointer;
 }
 
+@media (max-width: 600px) {
+  .lightbox img {
+    max-width: 95%;
+    max-height: 70vh;
+    border-radius: 8px;
+  }
+
+  .lightbox-close {
+    top: 10px;
+    right: 15px;
+    font-size: 1.5rem;
+  }
+}
+
 .hidden {
   display: none;
 }
