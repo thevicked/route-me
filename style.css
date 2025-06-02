@@ -113,6 +113,27 @@ button:hover {
   margin-top: 0.5rem;
   padding-left: 1rem;
 }
+.post-images {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.post-images img {
+  max-width: 100%;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+  object-fit: cover;
+  flex: 1 1 calc(50% - 10px); /* Two images per row with spacing */
+}
+
+@media (max-width: 500px) {
+  .post-images img {
+    flex: 1 1 100%; /* Full width on smaller screens */
+  }
+}
 
 @media (max-width: 600px) {
  
